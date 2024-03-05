@@ -82,6 +82,7 @@ const initGame = async (selectedSide) => {
             }
         }
         setGameMode(null)
+        setSelectedStake(null)
     } catch (e) {
       let error = getErrorMessageFromFormattedString(e.message)
       toast.error(error)
@@ -223,7 +224,7 @@ const playRpsGame = async (selectedSide) => {
   },[wallet,selectedStake, gameMode])
 
   
-  // console.log(gameMode)
+  // console.log(gameMode, selectedStake,play)
 
   return (
     <div className="game-container">
