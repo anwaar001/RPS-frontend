@@ -1,0 +1,19 @@
+/* About.css */
+.about-page {
+    padding: 20px;
+    color: #333; /* Dark text for readability */
+    background-color: #f0f0f0; /* Light background */
+  }
+  
+  .about-page h1 {
+    color: #9E2AB3; /* Brand color for headings */
+    margin-bottom: 20px;
+  }
+  
+  .about-page p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  /* Additional styling as needed */
+  

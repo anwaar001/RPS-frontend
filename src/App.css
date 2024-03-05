@@ -1,0 +1,52 @@
+/* App.css */
+
+body, html, #root, .App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.NavBar, .Footer {
+  background-color: #2a2a2e;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.MainContent, .PhantomWalletButton { /* Updated from .ConnectWallet to .PhantomWalletButton */
+  flex: 1;
+  padding: 20px;
+}
+
+.MainContent {
+  background-color: #f0f0f0;
+}
+
+.PhantomWalletButton { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4a4a4d;
+}
+
+.Footer {
+  background-color: #1a1a1d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .NavBar, .Footer {
+    padding: 5px;
+  }
+
+  .MainContent, .PhantomWalletButton { /* Updated from .ConnectWallet to .PhantomWalletButton */
+    padding: 10px;
+  }
+}

@@ -1,0 +1,76 @@
+.ico-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #212529;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.ico-container h1 {
+    margin-bottom: 30px;
+    color: #9E2AB3;
+}
+
+.exchange-rates {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.buy-rate {
+    color: green; /* Green color for the buy rate */
+    font-weight: bold; /* Bold for emphasis */
+    margin-bottom: 10px;
+}
+
+.sell-rate {
+    color: red; /* Red color for the sell rate */
+    font-weight: bold; /* Bold for emphasis */
+}
+
+.get-qgem-button {
+    padding: 15px 30px;
+    background-color: #4caf50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.get-qgem-button:hover {
+    background-color: #388e3c; /* Darker shade on hover */
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    .ico-container {
+        padding: 15px;
+    }
+
+    .get-qgem-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .exchange-rates {
+        font-size: 1rem;
+    }
+}
+
+/* Additional styling for informational notes */
+.note {
+    margin-top: 20px;
+    font-style: italic; /* Italicized text for notes */
+    color: #555; /* Dark gray for readability */
+}
+
+/* Adjustments for referral bonus information */
+.referral-bonus {
+    margin-top: 20px;
+    color: #4caf50; /* Green to highlight the bonus */
+    font-weight: bold; /* Bold to make it stand out */
+}

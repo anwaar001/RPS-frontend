@@ -1,0 +1,29 @@
+.wallet-button {
+  padding: 10px 20px;
+  margin-left: auto; /* Push the button to the far right of its container */
+  background-color: #4caf50; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase; /* Optional: if you want text in uppercase */
+  font-weight: bold; /* Optional: if you want the font to be bold */
+}
+
+.wallet-button:hover {
+  background-color: #367c39; /* Darker green on hover */
+}
+
+/* If you're using a neon theme like in the provided image, you might add: */
+.wallet-button {
+  background: transparent;
+  border: 1px solid #30c3fc; /* Neon blue border */
+  color: #30c3fc;
+  text-shadow: 0 0 5px #30c3fc; /* Optional: for neon glow text */
+}
+
+.wallet-button:hover {
+  background-color: rgba(48, 195, 252, 0.2); /* Semi-transparent on hover */
+  box-shadow: 0 0 10px #30c3fc; /* Glow effect */
+}

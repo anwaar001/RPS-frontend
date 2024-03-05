@@ -1,0 +1,186 @@
+.whitepaper-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #212529;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whitepaper-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #9E2AB3; /* Changed to purple */
+}
+
+.whitepaper-container section {
+    margin-bottom: 20px;
+}
+
+.whitepaper-container h2 {
+    color: #9E2AB3; /* Changed to purple */
+    padding: 10px 15px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.whitepaper-subsection {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.whitepaper-subsection h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #9E2AB3; 
+}
+
+.whitepaper-subsection p {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    .whitepaper-container {
+        padding: 10px;
+    }
+
+    .whitepaper-container h2, .whitepaper-subsection h3 {
+        padding: 8px 10px;
+    }
+
+    .whitepaper-subsection {
+        padding: 8px;
+    }
+
+    .whitepaper-subsection h3 {
+        font-size: 1.2rem;
+    }
+
+    .whitepaper-subsection p {
+        font-size: 0.9rem;
+    }
+}
+
+.whitepaper-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #212529;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whitepaper-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #9E2AB3; /* Purple color for the main title */
+}
+
+.whitepaper-container section {
+    margin-bottom: 20px;
+}
+
+.whitepaper-container h2 {
+    color: #9E2AB3; /* Purple color for section titles */
+    padding: 10px 15px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.whitepaper-subsection {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.whitepaper-subsection h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #9E2AB3; /* Purple color for subsection titles */
+}
+
+.whitepaper-subsection ul {
+    list-style: inside square; /* Styling for unordered lists */
+    padding-left: 20px;
+}
+
+.whitepaper-subsection ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.whitepaper-subsection p {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    .whitepaper-container {
+        padding: 10px;
+    }
+
+    .whitepaper-container h2, .whitepaper-subsection h3 {
+        padding: 8px 10px;
+    }
+
+    .whitepaper-subsection {
+        padding: 8px;
+    }
+}
+
+/* Roadmap Section Styles */
+.whitepaper-container .whitepaper-subsection {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.whitepaper-container .whitepaper-subsection h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #9E2AB3; /* Purple color for headings */
+}
+
+.whitepaper-container .whitepaper-subsection ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 5px;
+}
+
+.whitepaper-container .whitepaper-subsection li {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+    .whitepaper-container .whitepaper-subsection {
+        padding: 8px;
+    }
+
+    .whitepaper-container .whitepaper-subsection h3 {
+        font-size: 1.2rem; /* Adjust font size for mobile */
+    }
+
+    .whitepaper-container .whitepaper-subsection ul {
+        margin-left: 15px;
+        padding-left: 0;
+    }
+
+    .whitepaper-container .whitepaper-subsection li {
+        font-size: 0.9rem; /* Adjust font size for list items on mobile */
+    }
+}

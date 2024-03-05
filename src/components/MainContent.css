@@ -1,0 +1,376 @@
+/* MainContent.css */
+:root {
+  --primary-bg-color: #1a1a1a;
+  --secondary-bg-color: #282c34;
+  --highlight-color: #f9b934;
+  --primary-text-color: #fff;
+  --button-bg-color: #007bff;
+  --button-hover-bg-color: #0056b3;
+  --popup-bg-color: #f8f9fa;
+}
+
+.main-content {
+  padding: 20px;
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+}
+
+.intro-section {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-bg-color);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.intro-heading {
+  font-size: 2.5rem;
+  color: #9E2AB3;
+  margin-bottom: 20px;
+  animation: slideDown 1s ease-in-out;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.intro-cta {
+  padding: 10px 20px;
+  background-color: var(--button-bg-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.intro-cta:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.features-section {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+  border-top: 2px solid #800080;
+  border-bottom: 2px solid #800080;
+}
+
+.features-section h2 {
+  font-size: 2rem;
+  color: #800080;
+  margin-bottom: 15px;  
+}
+
+.features-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.game-showcase-section {
+  padding: 20px;
+  background-color: var(--secondary-bg-color); /* Secondary background color */
+  color: var(--primary-text-color); /* Primary text color for readability */
+  text-align: center; /* Centering the content */
+  border-radius: 8px; /* Rounded corners for the section */
+  margin-bottom: 30px; /* Spacing from the next section */
+}
+
+
+.game-showcase-section h2 {
+  font-size: 2rem; /* Large font size for section heading */
+    color: #9E2AB3; /* Purple color */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.game-details h3, .game-details p {
+  color: #000; /* Black text color */
+}
+
+.games-gallery-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0; /* Spacing above and below the gallery */
+}
+
+.games-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0; /* Padding inside the gallery */
+}
+
+.game-card {
+  flex: 0 0 auto; /* Flex settings to prevent cards from shrinking */
+  margin-right: 20px; /* Spacing between each game card */
+  /* ... other existing styles ... */
+}
+
+/* Remove margin from the last game card */
+.game-card:last-child {
+  margin-right: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: purple; /* Example button color */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 15px 30px;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+
+
+.game-card {
+  width: 300px; /* Fixed width for each game card */
+  border: 1px solid #ddd; /* Border for card */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures content fits within the borders */
+  background-color: #f8f9fa; /* Background color for card */
+  transition: transform 0.3s ease-in-out; /* Smooth transform effect */
+}
+
+.game-card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card on hover */
+}
+
+.game-image {
+  width: 100%; /* Image takes full width of the card */
+  height: 180px; /* Fixed height for images */
+  object-fit: cover; /* Ensures image covers the area nicely */
+}
+
+.game-details {
+  padding: 10px; /* Padding inside card for text and button */
+  text-align: center; /* Centering text and button */
+}
+
+.game-details h3 {
+  margin: 10px 0; /* Spacing around game title */
+}
+
+.game-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Ensure it's above other content */
+}
+
+.game-popup-content {
+  background-color: #fff; /* Assuming a white background for the popup */
+  color: #000; /* Change text color to black for visibility */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* If there are specific elements within the popup that need color changes, target them specifically. For example: */
+.game-popup-content h3 {
+  color: #000; /* Black color for the heading */
+}
+
+.game-popup-content p {
+  color: #000; /* Black color for the paragraph */
+}
+
+
+.learn-more-btn {
+  background-color: var(--button-bg-color); /* Background color for the button */
+  color: white; /* Text color for the button */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners for the button */
+  border: none; /* No border for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease-in-out; /* Transition for hover effect */
+  font-weight: bold; /* Bold text for better visibility */
+  text-decoration: none; /* No underline for the text */
+}
+
+
+.learn-more-btn:hover {
+  background-color: #9E2AB3;
+}
+
+.data-dashboard-section, 
+.testimonials-section {
+  padding: 20px;
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+  margin-bottom: 30px;
+}
+
+.data-dashboard-section h3, 
+.testimonials-section h3 {
+  color: var(--highlight-color);
+  margin-bottom: 10px;
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-card {
+  background-color: var(--secondary-bg-color);
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.review-card h3 {
+  color: var(--highlight-color);
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  font-style: italic;
+}
+
+.review-card span {
+  display: block;
+  margin-top: 10px;
+  color: #4caf50;
+}
+
+.faq-section .faqs-container {
+  margin-top: 20px;
+}
+
+.faq-item {
+  background-color: #333;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.faq-question {
+  font-weight: bold;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  color: var(--button-bg-color);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.faq-item.active .faq-question {
+  color: var(--button-bg-color);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding-top: 10px;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles for different screen sizes */
+@media (max-width: 768px) {
+  .board {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .board {
+      width: 100%;
+      height: auto;
+    }
+  
+    .square {
+      /* On smaller screens, adjust square size for better visibility and interaction */
+      min-width: 40px;
+      min-height: 40px;
+    }
+    
+    .game-popup-content, .reviews-container {
+      /* Adjust styles for smaller screens to ensure content is readable and fits nicely */
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .game-popup-content {
+      /* Ensure the popup content is not too wide on small screens */
+      max-width: 90%;
+    }
+  
+    .reviews-container {
+      /* On smaller screens, arrange review cards in a single column for better readability */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  
+    .review-card {
+      /* Adjust the width of review cards on smaller screens for consistency */
+      width: 100%;
+      max-width: 350px; /* Maximum width to ensure cards are not too stretched */
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .game-card {
+    width: 200px;
+  }
+
+  .reviews-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}

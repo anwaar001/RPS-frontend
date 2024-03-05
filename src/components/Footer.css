@@ -1,0 +1,55 @@
+/* Footer.css */
+.footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-link {
+  padding: 8px 12px;
+  margin-right: 10px; /* Spacing between buttons */
+  background-color: #4caf50; /* Primary button color */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-link:hover {
+  background-color: #3e8e41; /* Darker shade on hover */
+}
+
+.footer-nav {
+  margin-bottom: 20px; /* Space above the navigation */
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  margin: 0 10px; /* Adjust spacing as needed */
+  font-size: 24px; /* Adjust icon size as needed */
+  color: #fff; /* Adjust icon color as needed */
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  color: #9E2AB3; /* Highlight color on hover */
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+  }
+}

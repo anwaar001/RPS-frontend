@@ -1,0 +1,490 @@
+{
+    "version": "0.1.0",
+    "name": "rps_game",
+    "instructions": [
+        {
+            "name": "initalizeVault",
+            "accounts": [
+                {
+                    "name": "vault",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "vaultTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenAddress",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "associatedTokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "rent",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "withDrawVault",
+            "accounts": [
+                {
+                    "name": "vault",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "vaultTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "signerTokenAccount",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "tokenAddress",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "associatedTokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "rent",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "ix",
+                    "type": {
+                        "defined": "WithdrawIx"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "createGame",
+            "accounts": [
+                {
+                    "name": "newGame",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "vaultTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenAddress",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "payerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "associatedTokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "rent",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "ix",
+                    "type": {
+                        "defined": "InitGameIx"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "joinGame",
+            "accounts": [
+                {
+                    "name": "newGame",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "vaultTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenAddress",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "payerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "creatorTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "associatedTokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "rent",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "playGame",
+            "accounts": [
+                {
+                    "name": "vault",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "newGame",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "vaultTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenAddress",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "payerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "creatorTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "associatedTokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "rent",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "ix",
+                    "type": {
+                        "defined": "PlayGameIx"
+                    }
+                }
+            ]
+        }
+    ],
+    "accounts": [
+        {
+            "name": "Vault",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "creator",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "tokenAddress",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "bump",
+                        "type": "u8"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Game",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "bump",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "creator",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "joiner",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "stakeAmount",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "isActive",
+                        "type": "bool"
+                    },
+                    {
+                        "name": "createdAt",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "selectedSide",
+                        "type": "string"
+                    },
+                    {
+                        "name": "identifier",
+                        "type": "string"
+                    },
+                    {
+                        "name": "state",
+                        "type": {
+                            "defined": "GameState"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "types": [
+        {
+            "name": "WithdrawIx",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "u64"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "InitGameIx",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "identifier",
+                        "type": "string"
+                    },
+                    {
+                        "name": "selectedSide",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "JoinGameIx",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "amount",
+                        "type": "u64"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "PlayGameIx",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "selectedSide",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "GameState",
+            "type": {
+                "kind": "enum",
+                "variants": [
+                    {
+                        "name": "WaitingForOpponent"
+                    },
+                    {
+                        "name": "InProgress"
+                    },
+                    {
+                        "name": "Completed"
+                    }
+                ]
+            }
+        }
+    ],
+    "errors": [
+        {
+            "code": 6000,
+            "name": "InvalidStake",
+            "msg": "Invalid stake amount."
+        },
+        {
+            "code": 6001,
+            "name": "GameNotFound",
+            "msg": "Game not found."
+        },
+        {
+            "code": 6002,
+            "name": "GameNotActive",
+            "msg": "Game is not active."
+        },
+        {
+            "code": 6003,
+            "name": "CannotJoinOwnGame",
+            "msg": "Cannot join your own game."
+        },
+        {
+            "code": 6004,
+            "name": "GameAlreadyJoined",
+            "msg": "This game has already been joined."
+        },
+        {
+            "code": 6005,
+            "name": "InvalidGameState",
+            "msg": "Invalid game state for this operation."
+        },
+        {
+            "code": 6006,
+            "name": "InvalidAccount",
+            "msg": "Invalid account."
+        },
+        {
+            "code": 6007,
+            "name": "InvalidChoice",
+            "msg": "Invalid Choice."
+        },
+        {
+            "code": 6008,
+            "name": "CannotPlayThisGame",
+            "msg": "Cannot play this game."
+        },
+        {
+            "code": 6009,
+            "name": "InvalidAdmin",
+            "msg": "Invalid Admin."
+        }
+    ],
+    "metadata": {
+        "address": "2HQT6Y1GgoYsRP1Um5VcvoD5ceCLkaqENuJRqn3nih4m"
+    }
+}

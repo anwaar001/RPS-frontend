@@ -1,0 +1,178 @@
+/* Basic layout styles for the game container */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  color: #fff;
+  background: #101820; /* Dark background for futuristic feel */
+}
+
+/* Styles for the choices (rock, paper, scissors buttons) */
+.choices {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+/* Button styles */
+.button {
+  background-color: #30c3fc; /* Neon blue */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background-color: #3e8e41; /* Change color on hover */
+}
+
+/* Waiting indicator styles */
+.waiting-indicator {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+/* Game state notifications styles */
+.game-state-notification {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+/* Player status styles */
+.player-status {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Action confirmation button styles */
+.action-confirmation {
+  margin-top: 20px;
+}
+
+.choice-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.choice-btn:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.choice {
+  text-align: center;
+}
+
+.choice-image {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.choice-text {
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* Styles for the choice icons */
+.choice-icon {
+  font-size: 2rem; /* Adjust size as needed */
+  color: white;
+}
+
+/* Outcome styles */
+.outcome {
+margin-top: 20px;
+}
+
+.outcome-image {
+max-width: 200px; /* Adjust size as needed */
+height: auto;
+margin-bottom: 15px;
+}
+
+.outcome-text {
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+.outcome-text.win {
+color: #4caf50; /* Green for winning text */
+}
+
+.outcome-text.lose {
+color: #f44336; /* Red for losing text */
+}
+
+.outcome-text.draw {
+color: #ffeb3b; /* Yellow for draw text */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+.choice-image {
+  width: 80px; /* Smaller size for mobile */
+}
+}
+
+/* Additional animations and hover effects */
+.choice-btn:hover .choice-image {
+transform: rotate(10deg); /* Example rotation on hover */
+}
+
+.stake-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.stake-button {
+  background-color: #4caf50; /* Green background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.stake-button.selected {
+  background-color: #81c784; /* Lighter green for selected button */
+}
+
+.stake-button:hover {
+  background-color: #66bb6a; /* Different color on hover */
+}
+
+.game-mode-selection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.game-mode-selection button {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.game-mode-selection button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+

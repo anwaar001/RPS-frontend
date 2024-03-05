@@ -1,0 +1,35 @@
+/* Contact.css */
+
+.contact-page {
+    padding: 20px;
+    color: #333;
+    background-color: #f0f0f0;
+  }
+  
+  .contact-page h1 {
+    color: #9E2AB3;
+    margin-bottom: 20px;
+  }
+  
+  .contact-page ul {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0;
+  }
+  
+  .contact-page li {
+    margin-bottom: 10px;
+  }
+  
+  .contact-page a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-page a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style contact form here if you have one */
+  
+  /* Additional styling as needed */
+  

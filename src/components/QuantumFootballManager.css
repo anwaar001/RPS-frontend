@@ -1,0 +1,18 @@
+.quantum-football-manager {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+.quantum-football-manager h1 {
+    color: #9E2AB3;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Additional styles will be added here as the component evolves */

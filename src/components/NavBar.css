@@ -1,0 +1,169 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #101820; /* Example background color */
+}
+
+.logo-link img {
+  height: 35px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  margin-right: 1rem; /* Spacing between navigation and the wallet button */
+}
+
+.nav-link {
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  background-color: #151a1d; /* Dark item background */
+  color: #ffffff; /* Neon blue text */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #1f252a; /* Slightly lighter background on hover/focus */
+  color: #9E2AB3;
+  outline: none;
+}
+
+.games-dropdown:hover .dropdown-content,
+.games-dropdown:focus .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #151a1d;
+  min-width: 150px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  display: block;
+  text-decoration: none;
+  color: #30c3fc;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #1f252a;
+  color: #fff;
+}
+
+.logo-link img.qgem-logo {
+  /* Adjust the size of the logo */
+  height: 35px; /* Example size, adjust as needed */
+  width: auto; /* Maintain the aspect ratio */
+  /* Set the background color to white */
+  background-color: white;
+  /* Add padding if needed */
+  padding: 10px;
+  /* Create a purple border */
+  border: 2px solid #800080; /* Example purple color, adjust the hex value as needed */
+  /* Optionally, round the corners of the logo's background */
+  border-radius: 10px;
+  /* Add a box-shadow for a slight depth effect (optional) */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Center the logo inside the header */
+  display: block;
+  margin: 0 auto;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+}
+
+.social-media-icons {
+  display: flex;
+  margin-left: 100px; /* Adjust spacing to your liking */
+}
+
+.social-icon {
+  margin: 0 5px; /* Adjust spacing to your liking */
+  font-size: 24px; /* Adjust icon size as needed */
+  color: #fff; /* Adjust icon color as needed */
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  color: #30c3fc; /* Adjust hover color as needed */
+}
+
+.logo-link img.qgem-logo {
+  /* Existing styles for the logo */
+  transition: transform 0.3s ease; /* Smooth transition for the transform property */
+}
+
+.logo-link:hover img.qgem-logo,
+.logo-link:focus img.qgem-logo {
+  transform: scale(1.1); /* Slightly increase the size of the logo */
+}
+
+.menu-icon {
+  display: none;
+}
+
+.modal {
+  background-color: #101820;
+  width: 100%;
+  z-index: 100;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+}
+
+.close-icon {
+  font-size: 24px;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  color: #fff;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 80%;
+  margin: 45px auto 0px;
+}
+
+.mobile-nav-link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  /* … */
+
+  .navbar-container {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+}
