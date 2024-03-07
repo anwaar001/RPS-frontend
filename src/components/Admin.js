@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Admin.css"
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
-import { getErrorMessageFromFormattedString, initializeVault, withdrawFromVault } from '../program/game-func'
+import { getErrorMessageFromFormattedString, initializeVault, program, withdrawFromVault, vaultAddress, tokenMint } from '../program/game-func'
 import { connection } from '../program/environment'
 import { toast } from 'react-toastify'
+import { getAssociatedTokenAddress } from '@solana/spl-token'
 
 const Admin = () => {
     const wallet = useAnchorWallet()
+    const [balance, setBalance] = useState(null)
+    const [amountToWithDraw, setAmountToWithDraw] = useState(0)
 
     const initialize = async () => {
         try {
@@ -30,7 +33,7 @@ const Admin = () => {
                     await connection.sendRawTransaction(
                         tx.serialize(),
                         {
-                            skipPreflight: true
+                            skipPreflight: false
                         }
                     )
                 }
@@ -47,9 +50,17 @@ const Admin = () => {
                 if (!wallet) {
                     return
                 }
+                if(amountToWithDraw === 0){
+                    toast.error("Please Enter Amount To WithDraw!!!");
+                    return
+                }
+                if(amountToWithDraw > balance){
+                    toast.error("Enter a valid amount");
+                    return
+                }
     
                 const allTx = [];
-                    const tx = await withdrawFromVault(wallet)
+                    const tx = await withdrawFromVault(wallet, amountToWithDraw)
                     if (!tx) {
                         return
                     }
@@ -63,7 +74,7 @@ const Admin = () => {
                     await connection.sendRawTransaction(
                         tx.serialize(),
                         {
-                            skipPreflight: true
+                            skipPreflight: false
                         }
                     )
                 }
@@ -75,13 +86,26 @@ const Admin = () => {
         }
     }
 
+    useEffect(()=>{
+        (async()=>{
+            let vaultAta = await getAssociatedTokenAddress(tokenMint, vaultAddress, true)
+            let vaultBalance = await connection.getTokenAccountBalance(vaultAta);
+            // console.log(vaultAta.toString(), vaultBalance?.value?.uiAmount)
+            setBalance(vaultBalance?.value?.uiAmount)
+
+        })();
+      },[wallet])
+
   return (
-    <div>
-        <button className="initialize-vault-btn" onClick={initialize}>
+    <div className='admin-page'>
+        {vaultAddress ? <p className='vault-addr'>Vault Address : {vaultAddress.toString()}</p> : null}
+        {balance ? <p className='vault-addr'>Vault Balance : {balance}</p> : null}
+        {!vaultAddress && !balance ? <button className="initialize-vault-btn" onClick={initialize}>
             Init Vault
-        </button>
+        </button> : null}
+        <input type="number" placeholder='Amount' className='withdraw-input' value={amountToWithDraw} onChange={(e)=>{setAmountToWithDraw(parseFloat(e.target.value))}} />
         <button className="initialize-vault-btn" onClick={withdraw}>
-            withdraw Vault
+            Withdraw Vault
         </button>
     </div>
   )

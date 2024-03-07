@@ -254,6 +254,11 @@
                     "isSigner": false
                 },
                 {
+                    "name": "feeTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
                     "name": "signer",
                     "isMut": true,
                     "isSigner": true

@@ -139,6 +139,7 @@ const NavBar = () => {
                   </div>
                 )}
               </div>
+          <WalletMultiButton className="wallet-button-css"/>
             </nav>
           </div>,
           document.body

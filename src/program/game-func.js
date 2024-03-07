@@ -7,8 +7,9 @@ import { PublicKey, SYSVAR_RENT_PUBKEY, SystemProgram, Transaction } from "@sola
 
 const NEW_GAME_SEEDS = "new-game";
 const VAULT_SEED = "game-vault";
-const tokenMint = new PublicKey("6decN7PPe4Nh5k8PmuGxwfxeAkpNJJt6LGaTfsdC7Pyh");
-const vaultAddress = new PublicKey("CuBxLBcTkYo3k7FrrcfsNxAU7pXXongHwCE7ZntpE65S");
+export const tokenMint = new PublicKey("6decN7PPe4Nh5k8PmuGxwfxeAkpNJJt6LGaTfsdC7Pyh");
+export const vaultAddress = new PublicKey("CuBxLBcTkYo3k7FrrcfsNxAU7pXXongHwCE7ZntpE65S");
+export const feeWallet = new PublicKey("CjGrhwpGrhWmyqHahZtEFRw4ASm5oqLXjri5zzUsCyFw");
 
 export const getProvider = (wallet) => {
     const provider = new anchor.AnchorProvider(
@@ -57,7 +58,7 @@ export const initializeVault = async (wallet) => {
   }
 }
 
-export const withdrawFromVault = async (wallet) => {
+export const withdrawFromVault = async (wallet, amount) => {
   try {
     const provider = getProvider(wallet)
     const program = new anchor.Program(idl , idl.metadata.address, provider);
@@ -74,7 +75,7 @@ export const withdrawFromVault = async (wallet) => {
       wallet.publicKey
       );
 
-    const txn = await program.methods.withDrawVault({amount : new anchor.BN(0.1 * 1000000)}).accounts({
+    const txn = await program.methods.withDrawVault({amount : new anchor.BN(amount * 1000000)}).accounts({
       vault : vaultAddress,
       vaultTokenAccount : vaultAta,
       tokenAddress : tokenMint,
@@ -205,6 +206,11 @@ export const playGameCtx = async (wallet, selectedSide, game) => {
         tokenMint,
         game.account.creator
         );
+
+        const feeMintAta = await getAssociatedTokenAddress(
+        tokenMint,
+        feeWallet
+        );
     
     const vaultAta = await getAssociatedTokenAddress(
     tokenMint,
@@ -219,6 +225,7 @@ export const playGameCtx = async (wallet, selectedSide, game) => {
       tokenAddress : tokenMint,
       payerTokenAccount: payerMintAta,
       creatorTokenAccount: creatorMintAta,
+      feeTokenAccount: feeMintAta,
       signer : wallet.publicKey,
       tokenProgram: TOKEN_PROGRAM_ID,
       associatedTokenProgram : ASSOCIATED_TOKEN_PROGRAM_ID,

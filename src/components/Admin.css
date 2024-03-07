@@ -1,0 +1,37 @@
+.admin-page{
+    height: 80vh;
+    background: #101820;
+}
+
+.vault-addr{
+    color: #fff;
+    font-size: 16px;
+}
+
+button {
+    background-color: #30c3fc; /* Neon blue */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+button:hover {
+    background-color: #3e8e41; /* Change color on hover */
+}
+
+.withdraw-input{
+    padding: 10px;
+    color: #000;
+    font-size: 14px;
+    border: 1px solid #30c3fc;
+    border-radius: 5px;
+}
+
+.withdraw-input:focus{
+    outline: none;
+}

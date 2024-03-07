@@ -27,9 +27,9 @@
   background-color: #3e8e41; /* Darker shade on hover */
 }
 
-.footer-nav {
-  margin-bottom: 20px; /* Space above the navigation */
-}
+/* .footer-nav { */
+  /* margin-bottom: 20px; // Space above the navigation */
+/* } */
 
 .social-links {
   display: flex;
