@@ -151,6 +151,9 @@
   text-decoration: none;
   color: #fff;
 }
+.mobile-wallet-btn{
+  display: none;
+}
 
 @media (max-width: 600px) {
   /* … */
@@ -164,6 +167,9 @@
     font-size: 30px;
     color: #fff;
     cursor: pointer;
+  }
+  .mobile-wallet-btn{
+    display: block;
   }
 
 }

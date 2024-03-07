@@ -75,6 +75,9 @@ const NavBar = () => {
           {/* <PhantomWalletButton /> */}
           <WalletMultiButton className="wallet-button-css"/>
         </div>
+        <div className="mobile-wallet-btn">
+        <WalletMultiButton className="wallet-button-css"/>
+        </div>
         <HiMenu className="menu-icon" onClick={() => setShowModal(true)} />
       </header>
 
@@ -139,7 +142,6 @@ const NavBar = () => {
                   </div>
                 )}
               </div>
-          <WalletMultiButton className="wallet-button-css"/>
             </nav>
           </div>,
           document.body
