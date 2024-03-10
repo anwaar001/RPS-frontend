@@ -203,18 +203,20 @@ const playRpsGame = async (selectedSide) => {
       if(wallet){
         const pg = program(wallet)
         const games = await pg.account.game.all(
-          [
-              {
-                dataSize: 178,
-              },
-            {
-              memcmp: {
-                offset: 81, 
-                bytes: base58.encode(Buffer.from([true])), 
-              },
-            },
-          ]
+          // [
+          //     {
+          //       dataSize: 178,
+          //     },
+          //   {
+          //     memcmp: {
+          //       offset: 81, 
+          //       bytes: base58.encode(Buffer.from([true])), 
+          //     },
+          //   },
+          // ]
         );
+
+        console.log(games)
 
         const filteredGames = games.sort((a, b) => a?.account?.stakeAmount?.toNumber() - b?.account?.stakeAmount?.toNumber());
         setGamesToPlay(filteredGames)
@@ -270,7 +272,7 @@ const playRpsGame = async (selectedSide) => {
                 {gamesToPlay.map((stake, index) => (
                   <button
                     key={index}
-                    className={`stake-button ${selectedStake === stake ? 'selected' : ''}`}
+                    className={`stake-button ${selectedStake === stake ? 'selected' : ''} ${!stake?.account?.isActive ? 'played-game' : ''}`}
                     onClick={() => joinRpsGame(stake)}
                   >
                     {stake?.account?.stakeAmount.toNumber() / 1000000} QGEM

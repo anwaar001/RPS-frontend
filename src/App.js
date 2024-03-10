@@ -101,7 +101,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/whitepaper" element={<Whitepaper />} />
               <Route path="/ico" element={<IcoPage />} />
-              {/* <Route path="/admin" element={<Admin />} /> */}
+              <Route path="/admin" element={<Admin />} />
               {/* Add more <Route> components here as needed */}
             </Routes>
             <Footer />

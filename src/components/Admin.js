@@ -103,6 +103,9 @@ const Admin = () => {
         {!vaultAddress && !balance ? <button className="initialize-vault-btn" onClick={initialize}>
             Init Vault
         </button> : null}
+        <button className="initialize-vault-btn" onClick={initialize}>
+            Init Vault
+        </button> 
         <input type="number" placeholder='Amount' className='withdraw-input' value={amountToWithDraw} onChange={(e)=>{setAmountToWithDraw(parseFloat(e.target.value))}} />
         <button className="initialize-vault-btn" onClick={withdraw}>
             Withdraw Vault

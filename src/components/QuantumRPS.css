@@ -176,3 +176,10 @@ transform: rotate(10deg); /* Example rotation on hover */
   background-color: #0056b3; /* Darker blue on hover */
 }
 
+.played-game {
+  background-color: #0056b3;
+}
+
+.played-game:hover {
+  background-color: #0056b3;
+}

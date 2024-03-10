@@ -8,7 +8,7 @@ import { PublicKey, SYSVAR_RENT_PUBKEY, SystemProgram, Transaction } from "@sola
 const NEW_GAME_SEEDS = "new-game";
 const VAULT_SEED = "game-vault";
 export const tokenMint = new PublicKey("6decN7PPe4Nh5k8PmuGxwfxeAkpNJJt6LGaTfsdC7Pyh");
-export const vaultAddress = new PublicKey("CuBxLBcTkYo3k7FrrcfsNxAU7pXXongHwCE7ZntpE65S");
+export const vaultAddress = new PublicKey("4Fyi7ojp14HBBjBgnNXr5jv72UaDgNi91N8j5mgYmtpM");
 export const feeWallet = new PublicKey("CjGrhwpGrhWmyqHahZtEFRw4ASm5oqLXjri5zzUsCyFw");
 
 export const getProvider = (wallet) => {
