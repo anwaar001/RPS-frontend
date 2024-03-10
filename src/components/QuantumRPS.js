@@ -216,8 +216,6 @@ const playRpsGame = async (selectedSide) => {
           // ]
         );
 
-        console.log(games)
-
         const filteredGames = games.sort((a, b) => a?.account?.stakeAmount?.toNumber() - b?.account?.stakeAmount?.toNumber());
         setGamesToPlay(filteredGames)
 
