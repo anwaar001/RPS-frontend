@@ -294,6 +294,22 @@
   padding-top: 10px;
 }
 
+.game-stat-box{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.game-stats{
+  background-color: #9E2AB3; 
+  color: white; 
+  padding: 10px 20px; 
+  border-radius: 5px;
+  border: none; 
+  transition: background-color 0.3s ease-in-out;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 /* Keyframes for animations */
 @keyframes fadeIn {
   from { opacity: 0; }

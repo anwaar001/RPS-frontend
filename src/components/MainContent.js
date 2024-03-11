@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './MainContent.css';
+import { program } from '../program/game-func';
+import { useAnchorWallet } from '@solana/wallet-adapter-react';
 
 const MainContent = ({ games }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
   const [activeFAQ, setActiveFAQ] = useState(null); 
+  const [activeGames, setActiveGames] = useState(0)
+  const [inActiveGame, setInActiveGame] = useState(0)
+
+  const wallet = useAnchorWallet()
 
   // Placeholder user reviews data
   const userReviews = [
@@ -50,6 +56,26 @@ const MainContent = ({ games }) => {
       behavior: 'smooth'
     });
   };
+
+  useEffect(()=>{
+    (async()=>{
+      if(wallet){
+        const pg = program(wallet)
+        const games = await pg.account.game.all();
+
+        const active = games.filter((item)=> item.account.isActive==true)
+        const inActive = games.filter((item)=> item.account.isActive==false)
+
+        setActiveGames(active?.length)
+        setInActiveGame(inActive?.length)
+
+        console.log(games,active, inActive)
+
+
+      }
+    })();
+    console.log("run")
+  },[wallet])
   
 
   return (
@@ -111,6 +137,10 @@ const MainContent = ({ games }) => {
         {/* Current Game Statistics */}
         <div className="current-game-stats">
           <h3>Current Game Statistics</h3>
+          {wallet ? <div className='game-stat-box'>
+            {activeGames ? <div className="game-stats">Active : {activeGames}</div> : null}
+            {inActiveGame ? <div className="game-stats">Inactive : {inActiveGame}</div> : null}
+          </div> : <p>Connect wallet to view stats</p>}
           {/* Placeholder for current game statistics */}
         </div>
 
