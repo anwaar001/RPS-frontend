@@ -342,5 +342,15 @@ const errorCodes = [
       "code": 6009,
       "name": "InvalidAdmin",
       "msg": "Invalid Admin."
+  },
+  {
+    "code": 1,
+    "name": "Not Enough Balance",
+    "msg": "Not enough balance to play."
+  },
+  {
+    "code": 3012,
+    "name": "Not Enough Balance",
+    "msg": "Not enough balance to play."
   }
 ]

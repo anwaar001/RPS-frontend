@@ -78,7 +78,7 @@ const initGame = async (selectedSide) => {
                 await connection.sendRawTransaction(
                     tx.serialize(),
                     {
-                        skipPreflight: true
+                        skipPreflight: false
                     }
                 )
             }
@@ -221,7 +221,7 @@ const playRpsGame = async (selectedSide) => {
         const inactive = await pg.account.game.all();
 
 
-        console.log(games,inactive)
+        // console.log(games,inactive)
 
         let filteredInactiveGames = inactive?.filter((item)=>item?.account?.isActive === false)
 
@@ -247,7 +247,7 @@ const playRpsGame = async (selectedSide) => {
           Total Completed Games : {inactiveGames ? inactiveGames.length : 0}
         </div>
         {latestFiveGames ? latestFiveGames.map((item)=>(
-          <div className="game-detail">
+          <div className="game-detail" key={item?.publicKey}>
           {item?.account?.gameWinner === "creator" ? item?.account?.creator?.toString().slice(0,4)+"...."+item?.account?.creator?.toString().slice(40) : item?.account?.gameWinner === "joiner" ? item?.account?.joiner?.toString().slice(0,4)+"...."+item?.account?.joiner?.toString().slice(40) : item?.account?.creator?.toString().slice(0,4)+"...."+item?.account?.creator?.toString().slice(40)} Won {item?.account?.gameWinner === "draw" ? (item?.account?.stakeAmount?.toNumber()/1000000) : (item?.account?.stakeAmount?.toNumber()/1000000)*2} QGEM
         </div>
         )) : null}
