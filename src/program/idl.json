@@ -353,6 +353,14 @@
                         "type": "string"
                     },
                     {
+                        "name": "gameWinner",
+                        "type": "string"
+                    },
+                    {
+                        "name": "joinerSide",
+                        "type": "string"
+                    },
+                    {
                         "name": "state",
                         "type": {
                             "defined": "GameState"
@@ -490,6 +498,6 @@
         }
     ],
     "metadata": {
-        "address": "Gpm4cMWam2pRquheJLcxRkbBTSFhvbcBh8UiKkoP4KGB"
+        "address": "C9HXbuoNRyHpjn3dLTgQhHmiMWmHmZ6cJnY4h87ACPVH"
     }
 }

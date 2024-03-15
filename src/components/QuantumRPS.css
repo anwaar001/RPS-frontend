@@ -183,3 +183,19 @@ transform: rotate(10deg); /* Example rotation on hover */
 .played-game:hover {
   background-color: #0056b3;
 }
+
+.game-details-container{
+  margin-left: 10px;
+}
+
+.game-detail{
+  background-color: #9E2AB3; 
+  color: white; 
+  padding: 10px; 
+  border-radius: 5px;
+  border: none; 
+  transition: background-color 0.3s ease-in-out;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 10px;
+}

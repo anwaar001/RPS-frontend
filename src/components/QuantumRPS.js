@@ -18,6 +18,8 @@ const QuantumRPS = () => {
   const [play, setPlay] = useState(false)
   const [currGame, setCurrGame] = useState(null)
   const [gamesToPlay, setGamesToPlay] = useState([])
+  const [inactiveGames, setInactiveGames] = useState([])
+  const [latestFiveGames, setLatestFiveGames] = useState([])
   const { publicKey } = useWallet()
   const wallet = useAnchorWallet()
 
@@ -203,22 +205,33 @@ const playRpsGame = async (selectedSide) => {
       if(wallet){
         const pg = program(wallet)
         const games = await pg.account.game.all(
-          // [
-          //     {
-          //       dataSize: 178,
-          //     },
-          //   {
-          //     memcmp: {
-          //       offset: 81, 
-          //       bytes: base58.encode(Buffer.from([true])), 
-          //     },
-          //   },
-          // ]
+          [
+              {
+                dataSize: 218,
+              },
+            {
+              memcmp: {
+                offset: 81, 
+                bytes: base58.encode(Buffer.from([true])), 
+              },
+            },
+          ]
         );
+
+        const inactive = await pg.account.game.all();
+
+
+        console.log(games,inactive)
+
+        let filteredInactiveGames = inactive?.filter((item)=>item?.account?.isActive === false)
+
+        setInactiveGames(filteredInactiveGames)
 
         const filteredGames = games.sort((a, b) => a?.account?.stakeAmount?.toNumber() - b?.account?.stakeAmount?.toNumber());
         setGamesToPlay(filteredGames)
 
+        const latestGames = filteredInactiveGames.sort((a, b) => b.account?.createdAt?.toNumber() - a.account?.createdAt?.toNumber());
+        setLatestFiveGames(latestGames)
       }
     })();
   },[wallet,selectedStake, gameMode])
@@ -228,6 +241,19 @@ const playRpsGame = async (selectedSide) => {
 
   return (
     <div className="game-container">
+      {(!gameMode) && (
+      <div className="game-details-container">
+        <div className="game-detail">
+          Total Completed Games : {inactiveGames ? inactiveGames.length : 0}
+        </div>
+        {latestFiveGames ? latestFiveGames.map((item)=>(
+          <div className="game-detail">
+          {item?.account?.gameWinner === "creator" ? item?.account?.creator?.toString().slice(0,4)+"...."+item?.account?.creator?.toString().slice(40) : item?.account?.gameWinner === "joiner" ? item?.account?.joiner?.toString().slice(0,4)+"...."+item?.account?.joiner?.toString().slice(40) : item?.account?.creator?.toString().slice(0,4)+"...."+item?.account?.creator?.toString().slice(40)} Won {item?.account?.gameWinner === "draw" ? (item?.account?.stakeAmount?.toNumber()/1000000) : (item?.account?.stakeAmount?.toNumber()/1000000)*2} QGEM
+        </div>
+        )) : null}
+      </div>
+      )}
+
       {/* Game mode selection (Join or Create) */}
       {(!gameMode) && (
         <div className="game-mode-selection">
