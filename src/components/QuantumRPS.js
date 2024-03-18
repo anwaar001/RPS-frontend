@@ -3,7 +3,7 @@ import './QuantumRPS.css';
 import { connection } from '../program/environment';
 import { useAnchorWallet, useWallet } from '@solana/wallet-adapter-react';
 import { initializeGame, program, joinGame, playGameCtx, getErrorMessageFromFormattedString} from '../program/game-func';
-import * as anchor from "@project-serum/anchor"
+import Slider from "react-slick";
 
 import base58 from 'bs58';
 import { toast } from 'react-toastify';
@@ -239,6 +239,16 @@ const playRpsGame = async (selectedSide) => {
   
   // console.log(gameMode, selectedStake,play)
 
+  const settings = {
+    infinite: gamesToPlay.length > 2 ? true : false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    arrows:false,
+  };
   return (
     <div className="game-container">
       {(!gameMode) && (
@@ -246,6 +256,20 @@ const playRpsGame = async (selectedSide) => {
         <div className="game-detail">
           Available Games : {gamesToPlay ? gamesToPlay.length : 0}
         </div>
+      </div>
+      )}
+
+{(!gameMode) && (
+      <div className="carousel-game-details-container">
+        <Slider {...settings}>
+                {gamesToPlay.map((stake, index) => (
+        <div className='slick-carousels'>
+                  <div className="carousel-game-detail" key={index}>
+                  {stake?.account?.creator?.toString().slice(0,4)+"...."+stake?.account?.creator?.toString().slice(40)} Stake {stake?.account?.stakeAmount.toNumber() / 1000000} QGEM
+                </div>
+              </div>
+                ))}
+      </Slider>
       </div>
       )}
 
