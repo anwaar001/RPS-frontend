@@ -230,7 +230,7 @@ const playRpsGame = async (selectedSide) => {
         const filteredGames = games.sort((a, b) => a?.account?.stakeAmount?.toNumber() - b?.account?.stakeAmount?.toNumber());
         setGamesToPlay(filteredGames)
 
-        const latestGames = filteredInactiveGames.sort((a, b) => b.account?.createdAt?.toNumber() - a.account?.createdAt?.toNumber());
+        const latestGames = filteredInactiveGames.sort((a, b) => b.account?.createdAt?.toNumber() - a.account?.createdAt?.toNumber()).slice(0,5);
         setLatestFiveGames(latestGames)
       }
     })();
