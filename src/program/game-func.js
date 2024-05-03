@@ -9,7 +9,7 @@ const NEW_GAME_SEEDS = "new-game";
 const VAULT_SEED = "game-vault";
 export const tokenMint = new PublicKey("6decN7PPe4Nh5k8PmuGxwfxeAkpNJJt6LGaTfsdC7Pyh");
 export const vaultAddress = new PublicKey("GvwKsv67fEXirtVC5FJjBcWgK1RTUMkqCGnS8WCUKwnA");
-export const feeWallet = new PublicKey("CjGrhwpGrhWmyqHahZtEFRw4ASm5oqLXjri5zzUsCyFw");
+export const feeWallet = new PublicKey("DmeKcaMTFFymvdBx7wbaicguGzaMXanKsJt12dF6JdiY");
 
 export const getProvider = (wallet) => {
     const provider = new anchor.AnchorProvider(
