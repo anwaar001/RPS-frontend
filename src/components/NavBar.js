@@ -30,8 +30,8 @@ const NavBar = () => {
         </div>
         <div className="navbar-container">
           <nav className="navigation">
-            <Link to="/ico" className="nav-link" onClick={closeDropdown}>
-              ICO
+            <Link to="/dao" className="nav-link" onClick={closeDropdown}>
+              DAO
             </Link>
             <Link to="/whitepaper" className="nav-link" onClick={closeDropdown}>
               Whitepaper

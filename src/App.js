@@ -102,7 +102,7 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/whitepaper" element={<Whitepaper />} />
-              <Route path="/ico" element={<IcoPage />} />
+              <Route path="/dao" element={<IcoPage />} />
               <Route path="/admin" element={<Admin />} />
               {/* Add more <Route> components here as needed */}
             </Routes>
