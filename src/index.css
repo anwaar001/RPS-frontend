@@ -3,3 +3,14 @@
         /* display: none; */
     }
 }
+
+.copy-box{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.copy-box img{
+    width: 18px;
+    cursor: pointer;
+}
