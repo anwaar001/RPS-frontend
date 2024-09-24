@@ -8,7 +8,8 @@ import "./NavBar.css";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useWallet } from "@solana/wallet-adapter-react";
 import copyIcon from  "../assets/copy-icon.png"
-import { set } from "@project-serum/anchor/dist/cjs/utils/features";
+
+const QGEM_ADDRESS = "6oBcsN8wRze7BjHYXF911YNGTSdG2awYqjxh8YVjZKo2";
 
 const NavBar = () => {
   const {publicKey} = useWallet()
@@ -42,8 +43,8 @@ const NavBar = () => {
             <img src="/assets/logo.png" alt="QGEM Logo" className="qgem-logo" />
           </Link>
           {publicKey ? <div className="copy-box">
-            <p style={{color:"white",marginLeft:"10px"}} >{publicKey?.toString().slice(0,4)+"...."+publicKey.toString().slice(-4)} </p>
-            {!copied ? <img src={copyIcon} alt="copy" onClick={() => {navigator.clipboard.writeText(publicKey?.toString()); setCopied(true) }} /> : <p style={{color:"white"}}>copied!</p>} 
+            <p style={{color:"white",marginLeft:"10px"}} >{QGEM_ADDRESS.slice(0,4)+"...."+QGEM_ADDRESS.slice(-4)} </p>
+            {!copied ? <img src={copyIcon} alt="copy" onClick={() => {navigator.clipboard.writeText(QGEM_ADDRESS); setCopied(true) }} /> : <p style={{color:"white"}}>copied!</p>} 
           </div>: null}
         </div>
         <div className="navbar-container">
