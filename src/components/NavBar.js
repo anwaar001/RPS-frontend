@@ -3,19 +3,12 @@ import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { createPortal } from "react-dom";
 import { IoMdClose } from "react-icons/io";
-// import PhantomWalletButton from "./PhantomWalletButton";
 import "./NavBar.css";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { useWallet } from "@solana/wallet-adapter-react";
-import copyIcon from  "../assets/copy-icon.png"
-
-const QGEM_ADDRESS = "6oBcsN8wRze7BjHYXF911YNGTSdG2awYqjxh8YVjZKo2";
 
 const NavBar = () => {
-  const {publicKey} = useWallet()
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [copied, setCopied] = useState(false)
 
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
@@ -26,13 +19,6 @@ const NavBar = () => {
     setIsDropdownVisible(false);
   };
 
-  useEffect(() => {
-    if(copied){
-      setTimeout(() => {
-        setCopied(false)
-      }, 1200);
-    }
-  }, [copied])
   
 
   return (
@@ -42,10 +28,6 @@ const NavBar = () => {
           <Link to="/" className="logo-link">
             <img src="/assets/logo.png" alt="QGEM Logo" className="qgem-logo" />
           </Link>
-          {publicKey ? <div className="copy-box">
-            <p style={{color:"white",marginLeft:"10px"}} >{QGEM_ADDRESS.slice(0,4)+"...."+QGEM_ADDRESS.slice(-4)} </p>
-            {!copied ? <img src={copyIcon} alt="copy" onClick={() => {navigator.clipboard.writeText(QGEM_ADDRESS); setCopied(true) }} /> : <p style={{color:"white"}}>copied!</p>} 
-          </div>: null}
         </div>
         <div className="navbar-container">
           <nav className="navigation">
