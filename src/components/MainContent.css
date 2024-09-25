@@ -20,6 +20,9 @@
   padding: 20px;
   background-color: var(--primary-bg-color);
   animation: fadeIn 2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .intro-heading {
@@ -31,7 +34,7 @@
 
 .intro-text {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .intro-cta {

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import './MainContent.css';
 import { program } from '../program/game-func';
 import { useAnchorWallet } from '@solana/wallet-adapter-react';
+import copyIcon from  "../assets/copy-icon.png"
+
+const QGEM_ADDRESS = "6oBcsN8wRze7BjHYXF911YNGTSdG2awYqjxh8YVjZKo2";
 
 const MainContent = ({ games }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -10,6 +13,8 @@ const MainContent = ({ games }) => {
   const [activeFAQ, setActiveFAQ] = useState(null); 
   const [activeGames, setActiveGames] = useState(0)
   const [inActiveGame, setInActiveGame] = useState(0)
+  const [copied, setCopied] = useState(false)
+
 
   const wallet = useAnchorWallet()
 
@@ -77,6 +82,13 @@ const MainContent = ({ games }) => {
     console.log("run")
   },[wallet])
   
+  useEffect(() => {
+    if(copied){
+      setTimeout(() => {
+        setCopied(false)
+      }, 1200);
+    }
+  }, [copied])
 
   return (
     <div className="main-content">
@@ -84,6 +96,10 @@ const MainContent = ({ games }) => {
       <section className="intro-section">
         <h1 className="intro-heading">Welcome to Quantum Gem</h1>
         <p className="intro-text">Explore the world of peer-to-peer blockchain gaming with Quantum Gem</p>
+        <div className="copy-box">
+            <p style={{color:"white"}} >{QGEM_ADDRESS.slice(0,4)+"...."+QGEM_ADDRESS.slice(-4)} </p>
+            {!copied ? <img src={copyIcon} alt="copy" onClick={() => {navigator.clipboard.writeText(QGEM_ADDRESS); setCopied(true) }} /> : <p style={{color:"white"}}>copied!</p>} 
+          </div>
         <div onClick={scrollToGamePreviews} className="intro-cta">
           Discover Games
         </div>
